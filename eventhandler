@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Adds Jquery to your website; needed for v1 only (see below) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <title>TITLE NOT EXISTING</title>
+    <style>
+        html, body{
+            height: 100%;
+            width: 100%;
+            background-color: rgb(32, 32, 32);
+            margin: 0;
+            
+            <!-- To center h2 and div -->
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn{
+            height: 5rem;
+            width: 5rem;
+            background-color: rgb(105, 105, 69);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>placeholder</h2>
+    
+    <!-- onclick="Click() is needed for v3 only (see below) -->
+    <div class="btn" onclick="Click()"></div>
+    
+    <script>
+    /* ----- Below are three common Javascript-Event methods, choose one, delete the others! ----- */
+    
+        //! Jquery¹
+        $(".btn").on("click", function(){
+            $("h2").html("Set text here...");
+        });
+
+        //! Plain Javascript v1² (outdated)
+        //! notice that onclick="Click()" is required here
+        var elem = document.getElementsByTagName("h2")[0];
+        function Click(){
+            elem.innerHTML = "Set text here...";
+        }
+
+        //! Plain Javascript v2
+        var elem = document.getElementsByTagName("h2")[0];
+        document.getElementsByTagName("div")[0].onclick = function(){
+           elem.innerHTML = "Set text here...";
+        }
+
+       //! Plain Javascript v3³
+       var elem = document.getElementsByTagName("h2")[0];
+       document.getElementsByTagName("div")[0].addEventListener("click", function(){
+           elem.innerHTML = "Set text here...";
+       });
+       
+    </script>
+</body>
+</html>
+
+
+
+
+______________________________________________________________________________________________________________________________________________
+¹ https://api.jquery.com/on/; https://www.w3schools.com/jquery/event_on.asp
+² https://www.w3schools.com/jsref/event_onclick.asp; https://www.freecodecamp.org/news/html-button-onclick-javascript-click-event-tutorial/
+³ https://www.w3schools.com/jsref/met_document_addeventlistener.asp; https://www.geeksforgeeks.org/javascript-addeventlistener-with-examples/; 
