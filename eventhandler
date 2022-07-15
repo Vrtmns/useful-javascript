@@ -37,7 +37,7 @@
     <div class="btn" onclick="Click()"></div>
     
     <script>
-    /* ----- Below are three common Javascript-Event methods, choose one, delete the others! ----- */
+    /* ----- Below are four common Javascript-Event methods, choose one, delete the others! ----- */
     
         //! Jquery¹
         $(".btn").on("click", function(){
